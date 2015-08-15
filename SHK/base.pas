@@ -80,6 +80,7 @@ procedure TForm1.Button1Click(Sender: TObject);
 var  myHour, myMin, mySec, myMilli : Word;
      inout:Integer;
 begin
+  TProgressBar(FindComponent('ProgressBar'+IntToStr((TButton(Sender)).Tag))).Position:=0;
   DecodeTime(TDateTimePicker(FindComponent('DateTimePicker'+IntToStr((TButton(Sender)).Tag))).Time, myHour, myMin, mySec, myMilli);
   TTimer(FindComponent('Timer'+IntToStr((TButton(Sender)).Tag))).Interval:= myMilli+MySec*1000+MyMin*1000*60+mYHour*1000*60*60;
   TTimer(FindComponent('Timer'+IntToStr((TButton(Sender)).Tag))).Enabled:=True;
