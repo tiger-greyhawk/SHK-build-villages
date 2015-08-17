@@ -1,0 +1,12 @@
+	# --- Begin  
+#date=02/26/2000  
+#version=2.0.1b  
+#message=[The newest version of the COOL program is available for download.  
+List of new features:  
+1. Feature 1  
+2. Feature 2  
+Would you like to upgrade this program imediately ?]  
+#caption=The cool program  
+#url=https://github.com/tiger-greyhawk/SHK-build-villages/tree/master/SHK/Shold.exe 
+#redirect=no  
+# ---  End  
