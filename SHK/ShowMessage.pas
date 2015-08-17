@@ -30,6 +30,7 @@ uses base;
 procedure TForm2.Button1Click(Sender: TObject);
 begin
   Memo1.Clear;
+  mymenu:=0;
   SetWindowPos(Handle, HWND_NOTOPMOST, Form2.Left, Form2.Top, Form2.Width, Form2.Height, SWP_SHOWWINDOW);  
   Form2.Close;
 end;

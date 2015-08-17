@@ -32,6 +32,7 @@ type
     procedure CoolTrayIcon1DblClick(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure Exit1Click(Sender: TObject);
+    procedure CoolTrayIcon1BalloonHintTimeout(Sender: TObject);
 
 
   private
@@ -97,6 +98,7 @@ procedure TForm1.Button1Click(Sender: TObject);
 var  myHour, myMin, mySec, myMilli : Word;
      inout:Integer;
 begin
+  mymenu:=1;
   TProgressBar(FindComponent('ProgressBar'+IntToStr((TButton(Sender)).Tag))).Position:=0;
   DecodeTime(TDateTimePicker(FindComponent('DateTimePicker'+IntToStr((TButton(Sender)).Tag))).Time, myHour, myMin, mySec, myMilli);
   TTimer(FindComponent('Timer'+IntToStr((TButton(Sender)).Tag))).Interval:= myMilli+MySec*1000+MyMin*1000*60+mYHour*1000*60*60;
@@ -203,7 +205,7 @@ begin
   iconData.hIcon := Application.Icon.Handle;
   iconData.szTip := 'MailAlert';
   iconData.uCallbackMessage := WM_MOUSEMOVE;
-  mymenu:=0;
+//  mymenu:=0;
 //  Shell_NotifyIcon(NIM_ADD, @iconData);
 end;
 
@@ -316,5 +318,10 @@ begin
   Exit;
 end;
 
+
+procedure TForm1.CoolTrayIcon1BalloonHintTimeout(Sender: TObject);
+begin
+  if mymenu=1 then CoolTrayIcon1.ShowBalloonHint(TTabSheet(Form1.FindComponent('TabSheet'+IntToStr((TButton(Sender)).Tag))).Caption, 'finished constructions', bitNone, 60);
+end;
 
 end.

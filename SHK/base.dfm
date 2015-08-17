@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 108
   Width = 843
   Height = 552
-  Caption = 'Form1'
+  Caption = 'SHK build villages'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -10797,6 +10797,7 @@ object Form1: TForm1
     IconIndex = 0
     MinimizeToTray = True
     OnClick = CoolTrayIcon1DblClick
+    OnBalloonHintTimeout = CoolTrayIcon1BalloonHintTimeout
     Left = 776
     Top = 56
   end
